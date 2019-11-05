@@ -1,0 +1,10 @@
+.navbar {
+    color: black;
+    min-width: 320px;
+    padding-right: 0px;
+    width: 100%;
+}
+
+.searchBox {
+    margin-right: 50px;
+}

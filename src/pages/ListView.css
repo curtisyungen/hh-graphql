@@ -1,0 +1,50 @@
+.listView {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    margin: 5px auto;
+    max-width: 60%;
+    text-align: center;
+}
+
+.page-item {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    width: 25px;
+}
+
+.pagination {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%);
+}
+
+.paginationBar {
+    font-size: 24px;
+    display: inline-block;
+    margin: 0px auto;
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.page-true {
+    border-bottom: 2px solid black;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 1200px) {
+    .listView {
+        margin-left: 260px;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .listView {
+        margin-left: 100px;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,18 @@
+.suggestions {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+    .suggestions {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .suggestions {
+        width: 200px;
+    }
+}
