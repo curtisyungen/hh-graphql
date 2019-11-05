@@ -8,7 +8,7 @@ const PORT = 5000;
 const app = express();
 
 var corsOptions = {
-  origin: 'https://hh-graphql.herokuapp.com/',
+  origin: 'http://hh-graphql.herokuapp.com/',
   credentials: true
 };
 
