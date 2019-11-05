@@ -7,7 +7,12 @@ const PORT = 5000;
 
 const app = express();
 
-app.use(cors());
+var corsOptions = {
+  origin: 'https://hh-graphql.herokuapp.com/',
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use('/graphql', graphqlHTTP({
     schema, 
     graphiql: true,
