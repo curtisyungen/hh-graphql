@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar/sidebar";
 import DetailView from "./pages/DetailView";
 import ListView from "./pages/ListView";
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
+import { createHttpLink } from 'apollo-link-http';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import './App.css';
@@ -16,8 +16,12 @@ const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown
 const RESULTS_PER_PAGE = 28;
 
 const cache = new InMemoryCache();
-const link = new HttpLink({
-  uri: 'http://localhost:5000/graphql'
+const link = createHttpLink({ 
+  uri: "/graphql",
+  credentials: "omit",
+  fetchOptions: {
+    mode: "no-cors",
+  }
 });
 
 const client = new ApolloClient({
