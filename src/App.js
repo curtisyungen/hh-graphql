@@ -17,12 +17,12 @@ const RESULTS_PER_PAGE = 28;
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: 'http://hh-graphql.herokuapp.com/graphql'
+  uri: 'http://localhost:5000/graphql'
 });
 
 const client = new ApolloClient({
   cache,
-  link
+  link,
 });
 
 class App extends Component {
@@ -191,7 +191,7 @@ class App extends Component {
             {/* REDIRECTS */
             /* ====================================================== */}
 
-            {this.state.view === "detail" ? (
+            {/* {this.state.view === "detail" ? (
               <Redirect 
                 to="/detail"
               />
@@ -205,7 +205,7 @@ class App extends Component {
               />
             ) : (
               <></>
-            )}    
+            )}     */}
 
             {/* PAGE ROUTES */
             /* ====================================================== */}  

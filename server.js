@@ -1,15 +1,14 @@
 const express = require("express");
-const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./src/graphql/schema');
 const cors = require('cors');
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 const app = express();
 
 app.use(cors());
-app.use('/graphql', bodyParser.json(), graphqlHTTP({
+app.use('/graphql', graphqlHTTP({
     schema, 
     graphiql: true,
 }));

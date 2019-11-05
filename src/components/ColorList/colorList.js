@@ -14,9 +14,9 @@ const getAllColors = gql`
 
 class ColorList extends Component {
     render() {
-        console.log(this.props.data);
+        console.log(this.props);
         return (
-            <div>
+            <div >
                 Color Name
             </div>
         );
