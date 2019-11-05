@@ -17,7 +17,7 @@ const RESULTS_PER_PAGE = 28;
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: 'http://localhost:5000/graphql'
+  uri: 'https://hh-graphql.herokuapp.com/list'
 });
 
 const client = new ApolloClient({
