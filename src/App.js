@@ -4,9 +4,7 @@ import Navbar from "./components/Navbar/navbar";
 import Sidebar from "./components/Sidebar/sidebar";
 import DetailView from "./pages/DetailView";
 import ListView from "./pages/ListView";
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { createHttpLink } from 'apollo-link-http';
-import ApolloClient from 'apollo-client';
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import './App.css';
 
@@ -15,14 +13,8 @@ const DEFAULT_COLOR = "Red";
 const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray"];
 const RESULTS_PER_PAGE = 28;
 
-const cache = new InMemoryCache();
-const link = createHttpLink({
-  uri: '/graphql',
-});
-
 const client = new ApolloClient({
-  cache,
-  link,
+  uri: 'https://hh-graphql.herokuapp.com/graphql',
 });
 
 class App extends Component {
