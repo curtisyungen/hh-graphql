@@ -15,6 +15,7 @@ const DEFAULT_COLOR = "Red";
 const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray"];
 const RESULTS_PER_PAGE = 28;
 
+
 const cache = new InMemoryCache();
 const link = createHttpLink({ 
   uri: "/graphql",
