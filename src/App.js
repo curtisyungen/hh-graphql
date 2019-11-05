@@ -13,8 +13,7 @@ import './App.css';
 const DEFAULT_VIEW = "list";
 const DEFAULT_COLOR = "Red";
 const COLOR_MENU = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray"];
-const RESULTS_PER_PAGE = 28;
-
+const RESULTS_PER_PAGE = 26;
 
 const cache = new InMemoryCache();
 const link = createHttpLink({ 
