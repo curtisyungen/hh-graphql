@@ -5,10 +5,11 @@ import Color from './Color';
 import './ColorList.css';
 
 const COLORS_QUERY = gql`
-    {
+    query getAllColors($cursor: String) {
         colors {
             id
             hexCode
+            cursor
         }
     }
 `;
