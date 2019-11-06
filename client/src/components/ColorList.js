@@ -4,15 +4,15 @@ import { Query } from 'react-apollo';
 import Color from './Color';
 import './ColorList.css';
 
-const COLORS_QUERY = gql`
-    query getAllColors($cursor: String) {
-        colors (cursor: $cursor) {
-            id
-            hexCode
-            cursor
-        }
-    }
-`;
+// const COLORS_QUERY = gql`
+//     query getAllColors($cursor: String) {
+//         colors (cursor: $cursor) {
+//             id
+//             hexCode
+//             cursor
+//         }
+//     }
+// `;
 
 export class ColorList extends Component {
     render() {
