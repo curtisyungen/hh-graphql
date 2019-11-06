@@ -6,7 +6,7 @@ import './ColorList.css';
 
 const COLORS_QUERY = gql`
     query getAllColors($cursor: String) {
-        colors {
+        colors (cursor: $cursor) {
             id
             hexCode
             cursor
@@ -25,7 +25,8 @@ export class ColorList extends Component {
                             if (error) console.log(error);
             
                             if (cursor) console.log('Cursor', cursor);
-                            console.log(data);
+            
+                            if (data) console.log('Data', data);
 
                             return (
                                 <div className="colorList">
