@@ -1,8 +1,18 @@
 import React, { Component } from "react";
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import "./Sidebar.css";
 
 const colorMenu = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray'];
+
+const COLOR_CLASS_QUERY = gql`
+    query getColorsByClass($class: String!) {
+        colors_by_class(class: $class) {
+            
+        }
+    }   
+`;
 
 class Sidebar extends Component {
     render() {
