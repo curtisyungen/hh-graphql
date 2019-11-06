@@ -1,0 +1,8 @@
+.colorList {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    float: left;
+    margin-left: 50px;
+    text-align: center;
+}

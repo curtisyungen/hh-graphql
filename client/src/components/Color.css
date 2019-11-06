@@ -1,0 +1,22 @@
+.color {
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    height: 100px;
+    margin: 15px;
+    margin-left: 0px;
+    text-decoration: none !important;
+    width: 120px;
+}
+
+.colorName {
+    background: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: black;
+    font-size: 16px;
+    height: auto;
+    text-align: center;
+    text-decoration: none !important;
+    width: 120px;
+}
