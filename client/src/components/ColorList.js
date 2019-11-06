@@ -20,9 +20,12 @@ export class ColorList extends Component {
             <Fragment>
                 <Query query={COLORS_QUERY}>
                     {
-                        ({loading, error, data}) => {
+                        ({loading, error, data, cursor}) => {
                             if (loading) return <h4>Loading...</h4>;
                             if (error) console.log(error);
+            
+                            if (cursor) console.log('Cursor', cursor);
+                            console.log(data);
 
                             return (
                                 <div className="colorList">
