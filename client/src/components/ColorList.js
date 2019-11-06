@@ -4,15 +4,15 @@ import { Query } from 'react-apollo';
 import Color from './Color';
 import './ColorList.css';
 
-// const COLORS_QUERY = gql`
-//     query getAllColors($cursor: String) {
-//         colors (cursor: $cursor) {
-//             id
-//             hexCode
-//             cursor
-//         }
-//     }
-// `;
+const COLORS_QUERY = gql`
+    query getAllColors($cursor: String) {
+        colors (cursor: $cursor) {
+            id
+            hexCode
+            cursor
+        }
+    }
+`;
 
 export class ColorList extends Component {
     render() {
@@ -20,13 +20,12 @@ export class ColorList extends Component {
             <Fragment>
                 <Query query={COLORS_QUERY}>
                     {
-                        ({loading, error, data, cursor}) => {
+                        ({loading, error, data, fetchMore}) => {
                             if (loading) return <h4>Loading...</h4>;
                             if (error) console.log(error);
-            
-                            if (cursor) console.log('Cursor', cursor);
-            
+
                             if (data) console.log('Data', data);
+                            console.log(fetchMore);
 
                             return (
                                 <div className="colorList">
