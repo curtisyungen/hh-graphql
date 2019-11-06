@@ -38,6 +38,6 @@ for (var b in baseHexes) {
     }
 }
 
-// console.log(colors);
+console.log(colors);
 
 module.exports = colors;
