@@ -55,15 +55,6 @@ class Navbar extends Component {
         });
     }
 
-    // Selects a match from Search Suggestions and hides suggestions
-    selectMatch = (match) => {
-        this.hideSuggestions();
-
-        this.setState({
-            searchTerm: match,
-        });
-    }
-
     render() {
         return (
             <nav className="navbar navbar-dark bg-dark justify-content-between">
