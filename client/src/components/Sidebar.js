@@ -31,6 +31,22 @@ class Sidebar extends Component {
         });
     }
 
+    getClass = (color) => {
+        this.setState({
+            getRandom: false,
+        }, () => {
+            this.props.getColorByClass(color);
+        });
+    }
+
+    getAll = () => {
+        this.setState({
+            getRandom: false,
+        }, () => {
+            this.props.getColorByClass(null);
+        });
+    }
+
     setRandom = () => {
         return (
             <Query query={GET_RANDOM} variables={{ id: Math.floor(Math.random() * 50) }}>
@@ -62,12 +78,7 @@ class Sidebar extends Component {
                 <Link 
                     to='/'
                     className="btn btn-light allBtn"
-                    onClick={() => {
-                        this.setState({
-                            getRandom: false,
-                        });
-                        this.props.getColorByClass.bind(null, null)
-                    }}
+                    onClick={this.getAll}
                 >
                     All Colors
                 </Link>
@@ -80,23 +91,17 @@ class Sidebar extends Component {
 
                 {this.state.getRandom && this.setRandom()}
                 
-                <div className="colorMenu">
+                <Link className="colorMenu" to='/'>
                     {colorMenu.map(color => (
-                        <Link 
+                        <div 
                             key={color}
-                            to='/'
                             className="menuItem"
-                            onClick={() => {
-                                this.setState({
-                                    getRandom: false,
-                                });
-                                this.props.getColorByClass.bind(null, color)
-                            }}
+                            onClick={this.getClass.bind(null, color)}
                         >
                             {color}
-                        </Link>
+                        </div>
                     ))}
-                </div>
+                </Link>
             </div>
         )
     }

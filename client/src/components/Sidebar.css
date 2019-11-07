@@ -12,9 +12,10 @@ margin-bottom: 10px !important;
   display: block;
   font-size: 20px;
   line-height: 2.0;
+  text-decoration: none;
 }
 
-.menuItem:hover {
+.menuItem:hover, a:hover {
   color: darkgray;
   text-decoration: none;
 }

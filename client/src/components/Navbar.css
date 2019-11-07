@@ -33,3 +33,13 @@
     width: 200px;
     z-index: 101;
 }
+
+@media only screen and (max-width: 520px) {
+    .searchBox {
+        right: 20px;
+    }
+    
+    .suggestions {
+        right: 20px;
+    }
+}
