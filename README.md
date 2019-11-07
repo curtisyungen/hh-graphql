@@ -65,8 +65,10 @@ Installation instructions for Node.js can be found here: https://nodejs.org/en/d
 Run the following commands in your console/terminal:
 
 1) git clone https://github.com/curtisyungen/hh-graphql
-2) cd hh-graphql
+2) cd hh-graphql/client
 3) npm install
-4) npm run dev
+4) cd ..
+5) npm install
+6) npm run dev
 
 App will run on http://localhost:4000.
