@@ -2,21 +2,33 @@
     border: 1px solid black;
     border-radius: 12px;
     cursor: pointer;
-    height: 100px;
     margin: 15px;
     margin-left: 0px;
+    position: relative;
     text-decoration: none !important;
-    width: 120px;
 }
 
 .colorName {
     background: #fff;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+    bottom: 0;
     color: black;
     font-size: 16px;
     height: auto;
+    margin-right: 15px;
+    position: absolute;
     text-align: center;
     text-decoration: none !important;
+    width: 100%;
+}
+
+.large {
+    height: 400px !important;
+    width: 660px;
+}
+
+.small {
+    height: 100px;
     width: 120px;
 }

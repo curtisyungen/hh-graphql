@@ -37,11 +37,6 @@
     text-align: center;
 }
 
-.mainColor {
-    height: 400px;
-    width: 668px;
-}
-
 .nextColors {
     display: flex;
     flex-wrap: wrap;

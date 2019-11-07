@@ -19,7 +19,12 @@ export class ColorDetail extends Component {
         return (
             <Fragment>
                 <div className="detailView">
-                    <div className="color mainColor" style={{background: this.props.location.state.hexCode }}></div>
+                    <Color 
+                        className="color mainColor" 
+                        style={{background: this.props.location.state.hexCode }} 
+                        color={this.props.location.state}
+                        size="large"
+                    />
                     <Query query={NEXT_COLORS_QUERY} variables={{ id: this.props.location.state.id }}>
                         {
                             ({loading, error, data, fetchMore}) => {
@@ -29,7 +34,7 @@ export class ColorDetail extends Component {
                                 return (
                                     <div className="nextColors">
                                         {data.next_colors.map(color => (
-                                            <Color key={color.id} color={color} />
+                                            <Color key={color.id} color={color} size="small" />
                                         ))}
                                     </div>
                                 )

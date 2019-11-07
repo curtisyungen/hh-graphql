@@ -54,7 +54,7 @@ export class ColorList extends Component {
                                         <div className="colorList">
                                             {
                                                 data.colors_by_class.map(color => (
-                                                    <Color key={color.id} color={color} >{ color.hexCode }</Color>
+                                                    <Color key={color.id} color={color} size="small">{ color.hexCode }</Color>
                                                 ))
                                             }
                                         </div>
@@ -75,7 +75,7 @@ export class ColorList extends Component {
                                         <div className="colorList">
                                             {
                                                 data.colors.map(color => (
-                                                    <Color key={color.id} color={color} >{ color.hexCode }</Color>
+                                                    <Color key={color.id} color={color} size="small">{ color.hexCode }</Color>
                                                 ))
                                             }
                                         </div>
