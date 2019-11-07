@@ -16,7 +16,6 @@ const NEXT_COLORS_QUERY = gql`
 
 export class ColorDetail extends Component {
     render() {
-        console.log(this.props);
         return (
             <Fragment>
                 <div className="detailView">
@@ -29,7 +28,7 @@ export class ColorDetail extends Component {
                     <Query query={NEXT_COLORS_QUERY} variables={{ id: this.props.location.state.id }}>
                         {
                             ({loading, error, data, fetchMore}) => {
-                                if (loading) return <h4>Loading...</h4>;
+                                if (loading) return <h4 style={{lineHeight: "120px"}}>Loading...</h4>;
                                 if (error) console.log(error);
 
                                 return (

@@ -7,7 +7,9 @@ margin-bottom: 10px !important;
 }
 
 .menuItem {
+  color: black;
   cursor: pointer;
+  display: block;
   font-size: 20px;
   line-height: 2.0;
 }

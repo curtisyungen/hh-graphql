@@ -1,6 +1,7 @@
 .color {
     border: 1px solid black;
     border-radius: 12px;
+    box-shadow: 0 0 5px gray;
     cursor: pointer;
     margin: 15px;
     margin-left: 0px;
@@ -25,6 +26,7 @@
 }
 
 .large {
+    cursor: default !important;
     height: 400px !important;
     width: 660px;
 }
