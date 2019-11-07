@@ -35,3 +35,10 @@
     height: 120px !important;
     width: 120px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .large {
+        height: 250px !important;
+        width: 100%;
+    }
+}

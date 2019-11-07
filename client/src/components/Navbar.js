@@ -5,8 +5,6 @@ import { Query } from 'react-apollo';
 import onClickOutside from 'react-onclickoutside';
 import "./Navbar.css";
 
-const MAX_SEARCH_RESULTS = 28;
-
 const GET_SUGGESTIONS = gql`
     query getSearchSuggestions($searchString: String!) {
         search_suggestions(searchString: $searchString) {
@@ -86,7 +84,7 @@ class Navbar extends Component {
                     />
                 </form>
 
-                {this.state.searchTerm && <Query query={GET_SUGGESTIONS} variables={{ searchString: this.state.searchTerm, max: MAX_SEARCH_RESULTS }}>
+                {this.state.searchTerm && <Query query={GET_SUGGESTIONS} variables={{ searchString: this.state.searchTerm }}>
                     {
                         ({loading, error, data}) => {
                             if (loading) return <h4>Loading...</h4>;
