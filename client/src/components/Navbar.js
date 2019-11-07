@@ -43,8 +43,7 @@ class Navbar extends Component {
         }
     }
 
-    handleClickOutside = (event) => {
-        event.preventDefault();
+    handleClickOutside = () => {
         this.setState({
             showSuggestions: false,
         });
@@ -80,7 +79,7 @@ class Navbar extends Component {
                         onKeyPress={this.handleKeyPress}
                         onChange={this.handleInputChange}
                         onFocus={this.showSuggestions}
-                        value={this.state.searchTerm}
+                        value={this.state.searchTerm || ""}
                     />
                 </form>
 

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import "./Sidebar.css";
 
 const colorMenu = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray'];
 
 const GET_RANDOM = gql`
     query getRandomColor($id: Int!) {
-        color_by_id {
+        color_by_id (id: $id) {
             id
             hexCode
         }
@@ -17,21 +17,38 @@ const GET_RANDOM = gql`
 
 class Sidebar extends Component {
 
-    getRandom = (event) => {
-        event.preventDefault();
-        let random = Math.floor(Math.random() * 100);
-        
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            getRandom: false,
+        }
+    }
+
+    getRandom = () => {
+        this.setState({
+            getRandom: true,
+        });
+    }
+
+    setRandom = () => {
         return (
-            <Query query={GET_RANDOM} variables={{ id: random }}>
+            <Query query={GET_RANDOM} variables={{ id: Math.floor(Math.random() * 50) }}>
                 {
                     ({loading, error, data}) => {
                         if (loading) return <h4>Loading...</h4>;
                         if (error) console.log(error);
 
-                        console.log(data);
-
                         return (
-                            <div>test</div>
+                            <Redirect 
+                                to={{
+                                    pathname: '/detail',
+                                    state: { 
+                                        id: data.color_by_id.id,
+                                        hexCode: data.color_by_id.hexCode,
+                                    }
+                                }}
+                            />
                         )
                     }
                 }
@@ -45,7 +62,12 @@ class Sidebar extends Component {
                 <Link 
                     to='/'
                     className="btn btn-light allBtn"
-                    onClick={this.props.getColorByClass.bind(null, null)}
+                    onClick={() => {
+                        this.setState({
+                            getRandom: false,
+                        });
+                        this.props.getColorByClass.bind(null, null)
+                    }}
                 >
                     All Colors
                 </Link>
@@ -55,13 +77,21 @@ class Sidebar extends Component {
                 >
                     Random Color
                 </button>
+
+                {this.state.getRandom && this.setRandom()}
+                
                 <div className="colorMenu">
                     {colorMenu.map(color => (
                         <Link 
                             key={color}
                             to='/'
                             className="menuItem"
-                            onClick={this.props.getColorByClass.bind(null, color)}
+                            onClick={() => {
+                                this.setState({
+                                    getRandom: false,
+                                });
+                                this.props.getColorByClass.bind(null, color)
+                            }}
                         >
                             {color}
                         </Link>
