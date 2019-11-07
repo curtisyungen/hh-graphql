@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/images/logo.png" alt="logo" />
+  <img src="./client/src/images/logo.png" alt="helpful human logo" />
 </p>
 
 # Helpful Human Interview Challenge, Redone with GraphQL
@@ -11,36 +11,26 @@ November 2019
 
 This is my second solution to the <b>Helpful Human Interview Challenge</b>. 
 
-#### I completed the Core, Stretch, and most of the Bonus Stretch objectives.
+**Deployed solution (Heroku): https://hh-graphql.herokuapp.com.**
+
+#### I believe I completed ALL of the Core, Stretch, and Bonus objectives.
 
 * Challenge instructions: https://github.com/HelpfulHuman/interview-challenge.
 * Project repository (Github): https://github.com/curtisyungen/hh-graphql.
-* Deployed solution (Heroku): https://hh-graphql.herokuapp.com.
-* First solution (Heroku): https://hh-interview.herokuapp.com.
+* OLD solution (Heroku): https://hh-interview.herokuapp.com.
 
 <br/>
 
-<p align="center">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ</p>
+<p align="center">┌༼▀̿ Ĺ̯▀̿༽┐</p>
 
 <hr/>
 
-### Reflection
+#### Here are a few of the main changes from the first solution:
+* I implemented GraphQL
+* I updated the script from which colors are generated
+* Changed pagination format
 
-#### Overall comments:
-
-
-#### What I liked: 
-* I think the interface turned out well.
-* I like the pagination.
-
-#### What I'd improve: 
-* I need to figure out how to make the <b>first-time load</b> quicker, likely by splitting up the App.js file into smaller ones.
-* I'm curious to see <b>a more optimal algorithm</b> for generating non-random hex codes.
-* The <b>shade filters</b> aren't perfect. That is, there are some purples grouped as browns, grays grouped in purples, etc.
-* I'd better utilize <b>Bootstrap</b> so I can avoid tedious media queries. 
-* I looked at some <b>GraphQL</b> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
-
-<hr />
+<hr/>
 
 ### Technologies
 1) Node.js
@@ -77,12 +67,3 @@ Run the following commands in your console/terminal:
 4) npm run dev
 
 App will run on http://localhost:4000.
-
-<hr/>
-
-### Screenshots
-
-![](./src/images/screenshot1.png)
-<br/>
-![](./src/images/screenshot2.png)
-<br/>
