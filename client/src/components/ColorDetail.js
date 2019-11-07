@@ -16,6 +16,7 @@ const NEXT_COLORS_QUERY = gql`
 
 export class ColorDetail extends Component {
     render() {
+        console.log(this.props);
         return (
             <Fragment>
                 <div className="detailView">

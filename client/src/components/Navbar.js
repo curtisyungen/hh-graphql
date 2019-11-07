@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchSuggestions from "./SearchSuggestions";
+import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import "./Navbar.css";
@@ -79,9 +79,9 @@ class Navbar extends Component {
                             return (
                                 <div className="suggestions">
                                     {data.search_suggestions.map(sugg => (
-                                        <p key={sugg.id} className="suggestion">
+                                        <Link key={sugg.id} className="suggestion" to={{pathname: '/detail', state: { id: sugg.id, hexCode: sugg.hexCode }}}>
                                             {sugg.hexCode}
-                                        </p>
+                                        </Link>
                                     ))}
                                 </div>
                             );
