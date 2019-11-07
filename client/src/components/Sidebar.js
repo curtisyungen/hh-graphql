@@ -1,32 +1,21 @@
 import React, { Component } from "react";
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
-import { Link } from 'react-router-dom';
 import "./Sidebar.css";
 
 const colorMenu = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray'];
-
-const COLOR_CLASS_QUERY = gql`
-    query getColorsByClass($class: String!) {
-        colors_by_class(class: $class) {
-            id
-        }
-    }   
-`;
 
 class Sidebar extends Component {
     render() {
         return (
             <div className="sidebar">
-                <Link 
+                <button 
                     className="btn btn-light allBtn"
-                    to={'/'}
+                    onClick={this.props.getColorByClass.bind(null, null)}
                 >
                     All Colors
-                </Link>
+                </button>
                 <button 
                     className="btn btn-light randomBtn"
-                    // onClick={this.props.getRandomColor}
+                    onClick={this.props.getRandomColor}
                 >
                     Random Color
                 </button>

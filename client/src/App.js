@@ -27,6 +27,10 @@ class App extends Component {
     });
   }
 
+  getRandomColor = () => {
+    let random = Math.floor(Math.random() * 80);
+  }
+
   render() {
     return (
       <ApolloProvider client={client}>
@@ -35,12 +39,14 @@ class App extends Component {
           <Navbar />
           <Sidebar 
             getColorByClass={this.getColorByClass}
+            getRandomColor={this.getRandomColor}
           />
 
           <div className="app">
             <Route exact path="/" component={() => <ColorList color_class={this.state.color_class}/>}/>
-            <Route path="/color/:hexCode" component={ColorDetail} />
+            <Route exact path="/color" component={ColorDetail} />
           </div>
+
         </Router>
       </ApolloProvider>
     );

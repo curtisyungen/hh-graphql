@@ -29,6 +29,7 @@ export class ColorList extends Component {
         this.state =  {
             color_class: 'Red',
             hasMoreItems: true,
+            offset: 0,
         }
     }
 
@@ -64,7 +65,7 @@ export class ColorList extends Component {
                     </Query>
                 ) : (
 
-                <Query query={ALL_COLORS_QUERY} variables={{offset: 0}}>
+                <Query query={ALL_COLORS_QUERY} variables={{offset: this.state.offset}}>
                     {
                         ({loading, error, data, fetchMore}) => {
                             if (loading) return <h4>Loading...</h4>;
@@ -79,28 +80,54 @@ export class ColorList extends Component {
                                             ))
                                         }
                                     </div>
-                                    {this.state.hasMoreItems && <button onClick={() => {
-                                        fetchMore({
-                                            variables: {
-                                                offset: data.colors[data.colors.length - 1].id,
-                                            },
-                                            updateQuery: (prevResult, { fetchMoreResult }) => {
-                                                if (!fetchMoreResult) {
-                                                    return prevResult;
-                                                }
-                                                if (fetchMoreResult.colors.length < 25) {
-                                                    this.setState({
-                                                        hasMoreItems: false,
-                                                    });
-                                                }
-                                                return {
-                                                    colors: [...fetchMoreResult.colors]
-                                                }
-                                            }
-                                        })
-                                    }}>
-                                        Load more
-                                </button> }
+                                    <div className="prevNextBtns">
+                                        {this.state.offset > 0 && <button onClick={() => {
+                                            this.setState({
+                                                offset: this.state.offset - 25,
+                                                hasMoreItems: true,
+                                            }, () => {
+                                                fetchMore({
+                                                    variables: {
+                                                        offset: this.state.offset,
+                                                    },
+                                                    updateQuery: (prevResult, { fetchMoreResult }) => {
+                                                        if (!fetchMoreResult) {
+                                                            return prevResult;
+                                                        }
+                                                        return {
+                                                            colors: [...fetchMoreResult.colors]
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                        }}>Prev</button>}
+                                        {this.state.hasMoreItems && <button onClick={() => {
+                                            this.setState({
+                                                offset: this.state.offset + 25,
+                                            }, () => {
+                                                fetchMore({
+                                                    variables: {
+                                                        offset: this.state.offset,
+                                                    },
+                                                    updateQuery: (prevResult, { fetchMoreResult }) => {
+                                                        if (!fetchMoreResult) {
+                                                            return prevResult;
+                                                        }
+                                                        if (fetchMoreResult.colors.length < 25) {
+                                                            this.setState({
+                                                                hasMoreItems: false,
+                                                            });
+                                                        }
+                                                        return {
+                                                            colors: [...fetchMoreResult.colors]
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                        }}>
+                                            Next
+                                        </button> }
+                                    </div>
                                 </Fragment>
                             )
                         }

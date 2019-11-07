@@ -18,7 +18,7 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(ColorType),
             args: { offset: { type: GraphQLInt }},
             resolve(parent, args) {
-                return _.filter(colors, (color) => { return color.id > args.offset && color.id <= (args.offset + 25)});
+                return _.filter(colors, (color) => { return color.id >= args.offset && color.id <= (args.offset + 25)});
             }
         },
         color_by_id: {

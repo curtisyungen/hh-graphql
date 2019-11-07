@@ -25,8 +25,8 @@ function lightenColor(hexCode, percentage) {
     return "#" + (g | (b << 8) | (r << 16)).toString(16);
 }
 
-let baseHexes = ['#CB4335', '#D35400', '#F1C40F', '#196F3D', '#21618C', '#5B2C6F', '#212F3C', '#979A9A'];
-let baseColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'gray', 'gray'];
+let baseHexes = ['#CB4335', '#D35400', '#F1C40F', '#196F3D', '#21618C', '#5B2C6F', '#654321', '#212F3C', '#979A9A'];
+let baseColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'gray', 'gray'];
 
 let colors = [];
 for (var b in baseHexes) {

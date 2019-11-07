@@ -1,0 +1,19 @@
+.clearBtn {
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 8px;
+    width: 200px;
+}
+
+.colorDetail {
+    margin: 5px 300px;
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+}

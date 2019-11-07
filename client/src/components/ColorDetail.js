@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import Color from './Color';
-// import { Link } from 'react-router-dom';
+import './ColorDetail.css';
 
 export class ColorDetail extends Component {
     render() {
         return (
-            <div>
-                test
-            </div>
+            <Fragment>
+                <div className="colorDetail">
+                    test
+                </div>
+                <Link to='/' className="btn clearBtn">Clear</Link>
+            </Fragment>
         )
     }
 }
