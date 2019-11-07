@@ -46,7 +46,11 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(ColorType),
             args: { id: { type: GraphQLInt }},
             resolve(parent, args) {
-                return _.filter(colors, (color) => { return color.id > args.id && color.id <= (args.id + 5)});
+                return _.filter(colors, (color) => { 
+                    if (args.id < 3) {
+                        return color.id <= 5 && color.id !== args.id;
+                    }
+                    return color.id >= args.id - 2 && color.id !== args.id && color.id <= (args.id + 3)});
             }
         }
     }
