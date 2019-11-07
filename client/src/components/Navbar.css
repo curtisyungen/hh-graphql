@@ -4,6 +4,7 @@
 
 .navbar {
     color: black;
+    font-family: 'Source Serif Pro', 'Times New Roman', 'Arial';
     min-width: 320px;
     padding-right: 0px;
     width: 100%;
