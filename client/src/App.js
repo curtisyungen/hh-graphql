@@ -44,7 +44,7 @@ class App extends Component {
 
           <div className="app">
             <Route exact path="/" component={() => <ColorList color_class={this.state.color_class}/>}/>
-            <Route exact path="/color" component={ColorDetail} />
+            <Route exact path="/detail" component={ColorDetail} />
           </div>
 
         </Router>

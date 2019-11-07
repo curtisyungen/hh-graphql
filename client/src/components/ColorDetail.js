@@ -4,13 +4,15 @@ import Color from './Color';
 import './ColorDetail.css';
 
 export class ColorDetail extends Component {
+    
     render() {
         return (
             <Fragment>
-                <div className="colorDetail">
-                    test
+                <div className="detailView">
+                    <div className="color mainColor" style={{background: this.props.location.state.hexCode }}></div>
+                    <div className="secondaryColors"></div>
+                    <Link to='/' className="btn clearBtn">Clear</Link>
                 </div>
-                <Link to='/' className="btn clearBtn">Clear</Link>
             </Fragment>
         )
     }
