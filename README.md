@@ -26,11 +26,11 @@ This is my second solution to the <b>Helpful Human Interview Challenge</b>.
 <hr/>
 
 #### Here are a few of the main changes from the first solution:
+*(OLD solution (Heroku): https://hh-interview.herokuapp.com.)
+
 * I implemented GraphQL
 * I updated the script from which colors are generated
 * Changed pagination format
-
-* OLD solution (Heroku): https://hh-interview.herokuapp.com.
 
 <hr/>
 
