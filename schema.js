@@ -46,7 +46,7 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(ColorType),
             args: { searchString: { type: GraphQLString }},
             resolve(parent, args) {
-                return colors;
+                return _.filter(colors, (color) => { return color.hexCode.indexOf(args.searchString) !== -1 });
             }
         },
         next_colors: {

@@ -8,7 +8,7 @@ const MAX_SEARCH_RESULTS = 28;
 
 const GET_SUGGESTIONS = gql`
     query getSearchSuggestions($searchString: String!) {
-        searchSuggestions(searchString: $searchString) {
+        search_suggestions(searchString: $searchString) {
             id
             hexCode
         }
@@ -20,77 +20,26 @@ class Navbar extends Component {
         super(props);
 
         this.state = {
-            color: null,
-            showSuggestions: false,
             searchTerm: null,
-            matches: null,
         }   
     }
 
     // Sets user search input as "searchTerm" in state
     handleInputChange = (event) => {
-        const {name, value} = event.target;
         event.preventDefault();
-
+        const {name, value} = event.target;
+        
         this.setState({
             [name]: value,
-        }, () => {
-            if (value !== null && value !== "") {
-                this.showSuggestions();
-            }
-            else {
-                this.hideSuggestions();
-            }
         });
     }
 
     // Conducts search when Enter key is pressed
     handleKeyPress = (event) => {
         let searchTerm = this.state.searchTerm;
-        let matches = this.state.matches;
-        if (event.key === "Enter" && searchTerm !== null && searchTerm !== "" && matches && matches.length > 0) {
+        if (event.key === "Enter" && searchTerm !== null && searchTerm !== "") {
             event.preventDefault();
-            this.props.searchForColor(matches);
-            this.props.getPages(matches);
         }
-    }
-
-    // Displays Search Suggestions
-    showSuggestions = () => {
-        this.setState({
-            showSuggestions: true,
-        }, () => {
-            this.getSuggestions();
-        });
-    }
-
-    // Hides Search Suggestions
-    hideSuggestions = () => {
-        this.setState({
-            showSuggestions: false,
-        });
-    }
-
-    // Gets list of hex codes that include search term
-    getSuggestions = () => {
-        let searchTerm = this.state.searchTerm;
-        let hexCodes = this.props.hexCodes;
-
-        let matches = [];
-        let count = 0;
-        if (searchTerm !== null && searchTerm !== "") {
-            while (matches.length < MAX_SEARCH_RESULTS && count < hexCodes.length) {
-                if (hexCodes[count].indexOf(searchTerm) > -1) {
-                    matches.push(hexCodes[count]);
-                }
-
-                count += 1;
-            }
-        }
-
-        this.setState({
-            matches: matches,
-        });
     }
 
     // Selects a match from Search Suggestions and hides suggestions
@@ -121,16 +70,24 @@ class Navbar extends Component {
                     />
                 </form>
 
-                {/* {this.state.showSuggestions && this.state.matches && this.state.matches.length > 0 ? (
-                    <SearchSuggestions 
-                        hideSuggestions={this.hideSuggestions}
-                        matches={this.state.matches}
-                        selectMatch={this.selectMatch}
-                        getColor={this.props.getColor}
-                    />
-                ) : (
-                    <></>
-                )} */}
+                {this.state.searchTerm && <Query query={GET_SUGGESTIONS} variables={{ searchString: this.state.searchTerm, max: MAX_SEARCH_RESULTS }}>
+                    {
+                        ({loading, error, data}) => {
+                            if (loading) return <h4>Loading...</h4>;
+                            if (error) console.log(error);
+
+                            return (
+                                <div className="suggestions">
+                                    {data.search_suggestions.map(sugg => (
+                                        <p key={sugg.id} className="suggestion">
+                                            {sugg.hexCode}
+                                        </p>
+                                    ))}
+                                </div>
+                            );
+                        }
+                    }
+                </Query>}
             </nav>
         )
     }
