@@ -1,8 +1,19 @@
 import React, { Component } from "react";
-// import SearchSuggestions from "../SearchSuggestions/searchSuggestions";
+import SearchSuggestions from "./SearchSuggestions";
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
 import "./Navbar.css";
 
-const MAX_SEARCH_RESULTS = 21;
+const MAX_SEARCH_RESULTS = 28;
+
+const GET_SUGGESTIONS = gql`
+    query getSearchSuggestions($searchString: String!) {
+        searchSuggestions(searchString: $searchString) {
+            id
+            hexCode
+        }
+    }
+`;
 
 class Navbar extends Component {
     constructor(props) {
@@ -94,7 +105,7 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-dark bg-dark justify-content-between">
-                {/* <img className="logo" src={require("../../images/logo-symbol.svg")} alt="logo" /> */}
+                <img className="logo" src={require('../images/logo.png')} alt="logo" />
                 <form className="form-inline searchBox">
                     <input 
                         autoComplete="off"

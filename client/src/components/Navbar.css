@@ -1,3 +1,7 @@
+.logo {
+    cursor: pointer;
+}
+
 .navbar {
     color: black;
     min-width: 320px;

@@ -42,6 +42,13 @@ const RootQuery = new GraphQLObjectType({
                 return _.filter(colors, (color) => { return color.class === args.color_class });
             }
         },
+        search_suggestions: {
+            type: new GraphQLList(ColorType),
+            args: { searchString: { type: GraphQLString }},
+            resolve(parent, args) {
+                return colors;
+            }
+        },
         next_colors: {
             type: new GraphQLList(ColorType),
             args: { id: { type: GraphQLInt }},
