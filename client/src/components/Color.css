@@ -9,6 +9,10 @@
     text-decoration: none !important;
 }
 
+.color:hover {
+    box-shadow: 0 0 15px #666666;
+}
+
 .colorName {
     background: #fff;
     border-bottom-left-radius: 12px;
@@ -29,6 +33,10 @@
     cursor: default !important;
     height: 400px !important;
     width: 660px;
+}
+
+.large:hover {
+    box-shadow: 0 0 5px gray;;
 }
 
 .small {

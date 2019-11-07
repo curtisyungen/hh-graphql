@@ -80,7 +80,7 @@ export class ColorList extends Component {
                                             }
                                         </div>
                                         <div className="prevNextBtns">
-                                            {this.state.offset > 0 && <button onClick={() => {
+                                            {this.state.offset > 0 && <button className="pageBtn" onClick={() => {
                                                 this.setState({
                                                     offset: this.state.offset - 25,
                                                     hasMoreItems: true,
@@ -100,7 +100,7 @@ export class ColorList extends Component {
                                                     });
                                                 });
                                             }}>Prev</button>}
-                                            {this.state.hasMoreItems && <button onClick={() => {
+                                            {this.state.hasMoreItems && <button className="pageBtn" onClick={() => {
                                                 this.setState({
                                                     offset: this.state.offset + 25,
                                                 }, () => {
