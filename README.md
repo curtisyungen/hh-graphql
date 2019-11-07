@@ -1,68 +1,88 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="./src/images/logo.png" alt="logo" />
+</p>
 
-## Available Scripts
+# Helpful Human Interview Challenge, Redone with GraphQL
+**by Curtis Yungen**
 
-In the project directory, you can run:
+November 2019
 
-### `yarn start`
+### Deliverables
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is my second solution to the <b>Helpful Human Interview Challenge</b>. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### I completed the Core, Stretch, and most of the Bonus Stretch objectives.
 
-### `yarn test`
+* Challenge instructions: https://github.com/HelpfulHuman/interview-challenge.
+* Project repository (Github): https://github.com/curtisyungen/hh-graphql.
+* Deployed solution (Heroku): https://hh-graphql.herokuapp.com.
+* First solution (Heroku): https://hh-interview.herokuapp.com.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `yarn build`
+<p align="center">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ</p>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr/>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Reflection
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Overall comments:
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### What I liked: 
+* I think the interface turned out well.
+* I like the pagination.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### What I'd improve: 
+* I need to figure out how to make the <b>first-time load</b> quicker, likely by splitting up the App.js file into smaller ones.
+* I'm curious to see <b>a more optimal algorithm</b> for generating non-random hex codes.
+* The <b>shade filters</b> aren't perfect. That is, there are some purples grouped as browns, grays grouped in purples, etc.
+* I'd better utilize <b>Bootstrap</b> so I can avoid tedious media queries. 
+* I looked at some <b>GraphQL</b> tutorials but decided to leave it out for this project. I'm interested in learning more about it though. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<hr />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Technologies
+1) Node.js
+2) Express.js
+3) ReactJS
+4) Bootstrap
+5) GraphQL
 
-## Learn More
+### NPM Dependencies
+1) express
+2) react-dom
+3) react-router-dom
+4) react-onclickoutside
+5) react-apollo
+6) concurrently
+7) cors
+8) create-react-app
+9) express-graphql
+10) graphql
+11) lodash
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Download Instructions
 
-### Code Splitting
+*Ensure that you have installed a Code Editor such as Visual Studio Code as well as Node.js.
+Installation instructions for Node.js can be found here: https://nodejs.org/en/download/*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Run the following commands in your console/terminal:
 
-### Analyzing the Bundle Size
+1) git clone https://github.com/curtisyungen/hh-graphql
+2) cd hh-graphql
+3) npm install
+4) npm run dev
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+App will run on http://localhost:4000.
 
-### Making a Progressive Web App
+<hr/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Screenshots
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![](./src/images/screenshot1.png)
+<br/>
+![](./src/images/screenshot2.png)
+<br/>
