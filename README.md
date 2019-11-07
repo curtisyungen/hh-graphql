@@ -7,11 +7,11 @@
 
 November 2019
 
-### Deliverables
-
 This is my second solution to the <b>Helpful Human Interview Challenge</b>. 
 
 <hr/>
+
+### Deliverables
 
 #### I believe I completed ALL of the Core, Stretch, and Bonus objectives.
 
