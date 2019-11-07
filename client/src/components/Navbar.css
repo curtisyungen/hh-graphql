@@ -1,6 +1,11 @@
+.logo {
+    height: 52px;
+}
+
 .navbar {
     color: black;
     font-family: 'Source Serif Pro', 'Times New Roman', 'Arial';
+    height: 68px;
     min-width: 320px;
     padding-right: 0px;
     width: 100%;

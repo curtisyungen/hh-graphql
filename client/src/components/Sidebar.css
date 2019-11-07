@@ -16,7 +16,7 @@ margin-bottom: 10px !important;
 }
 
 .menuItem:hover, a:hover {
-  color: darkgray;
+  color: rgb(99, 99, 99);
   text-decoration: none;
 }
 
