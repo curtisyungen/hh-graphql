@@ -11,12 +11,11 @@ November 2019
 
 This is my second solution to the <b>Helpful Human Interview Challenge</b>. 
 
-**Deployed solution (Heroku): https://hh-graphql.herokuapp.com.**
-
 #### I believe I completed ALL of the Core, Stretch, and Bonus objectives.
 
 * Challenge instructions: https://github.com/HelpfulHuman/interview-challenge.
 * Project repository (Github): https://github.com/curtisyungen/hh-graphql.
+**Deployed solution (Heroku): https://hh-graphql.herokuapp.com.**
 * OLD solution (Heroku): https://hh-interview.herokuapp.com.
 
 <br/>
