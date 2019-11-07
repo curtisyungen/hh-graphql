@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import onClickOutside from 'react-onclickoutside';
 import "./Navbar.css";
 
 const MAX_SEARCH_RESULTS = 28;
@@ -21,6 +22,7 @@ class Navbar extends Component {
 
         this.state = {
             searchTerm: null,
+            showSuggestions: false,
         }   
     }
 
@@ -31,6 +33,7 @@ class Navbar extends Component {
         
         this.setState({
             [name]: value,
+            showSuggestions: true,
         });
     }
 
@@ -40,6 +43,19 @@ class Navbar extends Component {
         if (event.key === "Enter" && searchTerm !== null && searchTerm !== "") {
             event.preventDefault();
         }
+    }
+
+    handleClickOutside = (event) => {
+        event.preventDefault();
+        this.setState({
+            showSuggestions: false,
+        });
+    }
+
+    showSuggestions = () => {
+        this.setState({
+            showSuggestions: true,
+        });
     }
 
     // Selects a match from Search Suggestions and hides suggestions
@@ -77,7 +93,7 @@ class Navbar extends Component {
                             if (error) console.log(error);
 
                             return (
-                                <div className="suggestions">
+                                this.state.showSuggestions && <div className="suggestions">
                                     {data.search_suggestions.map(sugg => (
                                         <Link key={sugg.id} className="suggestion" to={{pathname: '/detail', state: { id: sugg.id, hexCode: sugg.hexCode }}}>
                                             {sugg.hexCode}
@@ -93,4 +109,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default onClickOutside(Navbar);
