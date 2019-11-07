@@ -13,16 +13,32 @@ const client = new ApolloClient({
 });
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      color_class: null,
+    }
+  }
+
+  getColorByClass = (color_class) => {
+    this.setState({
+      color_class: color_class,
+    });
+  }
+
   render() {
     return (
       <ApolloProvider client={client}>
         <Router>
 
           <Navbar />
-          <Sidebar />
+          <Sidebar 
+            getColorByClass={this.getColorByClass}
+          />
 
           <div className="app">
-            <Route exact path="/" component={ColorList} />
+            <Route exact path="/" component={() => <ColorList color_class={this.state.color_class}/>}/>
             <Route path="/color/:hexCode" component={ColorDetail} />
           </div>
         </Router>

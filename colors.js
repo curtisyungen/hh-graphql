@@ -26,11 +26,11 @@ function lightenColor(hexCode, percentage) {
 }
 
 let baseHexes = ['#CB4335', '#D35400', '#F1C40F', '#196F3D', '#21618C', '#5B2C6F', '#212F3C', '#979A9A'];
-let baseColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'darkgray', 'lightgray'];
+let baseColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'gray', 'gray'];
 
 let colors = [];
 for (var b in baseHexes) {
-    for (var i=0; i<70; i+=8) {
+    for (var i=1; i<74; i+=8) {
         let nextColor = lightenColor(baseHexes[b], i);
         if (colors.indexOf(nextColor) === -1) {
             colors.push({
@@ -42,6 +42,6 @@ for (var b in baseHexes) {
     }
 }
 
-console.log(colors);
+// console.log(colors);
 
 module.exports = colors;

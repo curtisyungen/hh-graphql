@@ -9,7 +9,7 @@ const colorMenu = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown'
 const COLOR_CLASS_QUERY = gql`
     query getColorsByClass($class: String!) {
         colors_by_class(class: $class) {
-            
+            id
         }
     }   
 `;
@@ -36,7 +36,7 @@ class Sidebar extends Component {
                         <div 
                             key={color}
                             className="menuItem"
-                            // onClick={this.props.getColor.bind(null, color)}
+                            onClick={this.props.getColorByClass.bind(null, color)}
                         >
                             {color}
                         </div>
