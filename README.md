@@ -11,6 +11,8 @@ November 2019
 
 This is my second solution to the <b>Helpful Human Interview Challenge</b>. 
 
+<hr/>
+
 #### I believe I completed ALL of the Core, Stretch, and Bonus objectives.
 
 * Challenge instructions: https://github.com/HelpfulHuman/interview-challenge.
