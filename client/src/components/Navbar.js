@@ -54,15 +54,6 @@ class Navbar extends Component {
             showSuggestions: true,
         });
     }
-    
-    // Selects a match from Search Suggestions and hides suggestions	
-    selectMatch = (match) => {	
-        this.hideSuggestions();	
-
-        this.setState({	
-            searchTerm: match,	
-        });	
-    }
 
     render() {
         return (
